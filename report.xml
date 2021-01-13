@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="2" hostname="DESKTOP-BSEPO77" name="pytest" skipped="0" tests="2" time="0.293" timestamp="2021-01-12T19:12:40.214962"><testcase classname="case.login_box.test_getAir.TestInTheaters" name="test_in_theaters[验证响应中status和message与预期一致]" time="0.113"><failure message="AssertionError: assert 'success' == 'success!'&#10;  - success!&#10;  ?        -&#10;  + success">self = &lt;case.login_box.test_getAir.TestInTheaters object at 0x00000126C30C28D0&gt;, preparation = '在数据库中准备测试数据', env = {'host': {'air': 'http://api.map.baidu.com', 'local': 'test'}}, case = '验证响应中status和message与预期一致'
+http = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87...params': {'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG', 'data_type': 'all', 'district_id': 222405}, 'path': '/weather/v1/'}
+expected = {'response': {'message': 'success!', 'status': 0, 'text': '阴'}}
+
+    @pytest.mark.parametrize("case,http,expected",list(list_params),ids= cases)
+    def test_in_theaters(self,preparation,env,case,http,expected):#实现测试数据与用例代码逻辑分离
+        '''[
+                ('验证响应中status和message与预期一致',
+                    {
+                    'method': 'GET',
+                     'path': '/weather/v1/',
+                    'headers': {
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+                                },
+                     'params': {
+                                'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG',
+                                'district_id': 222405,
+                                'data_type': 'all'
+                                }
+                    },
+                    {
+                    'status': 0,
+                    'message': 'success'
+                        }
+                ),
+                 ('你好',
+                    {
+                    'method': 'POST',
+                    'path': '/weather/v1/',
+                    'headers':{
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+                                },
+                    'params': {
+                                'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG',
+                                'district_id': 222405,
+                                'data_type': 'all'
+                                }
+                    },
+                    {
+                    'status': 0,
+                    'message': 'success'
+                        }
+                     )
+                ]'''
+        # host = "http://api.map.baidu.com"
+        #[0][1]中0表示是第一条用例（列表中的第一个小元祖），1表示小元祖其中的字典“http”键的值--请求内容
+        # ps:小元祖中的内容分为三块，第一部分为用例标题，为字符串的形式；第二块是http的请求主体内容；第三块是预期结果的内容；后面两块都是以字典数据类型存储表达
+        #所以基本的形式有[i][0],[i][1],[i][2],i为用例的条数
+        # r = requests.request(list_params[0][1]["method"],
+        #                      url=host + list_params[0][1]["path"],
+        #                      headers=list_params[0][1]["headers"],
+        #                      params=list_params[0][1]["params"])
+    
+        r = requests.request(http["method"],
+                             url=env["host"]["air"] + http["path"],
+                             headers=http["headers"],
+                             params=http["params"]
+                             )
+        response = r.json()
+        print(response)
+        # assert response["status"] == 0
+        # assert response["status"] == list_params[0][2]['response']['status']
+        assert response["status"] == expected['response']['status']
+&gt;       assert response['message'] == expected['response']['message']
+E       AssertionError: assert 'success' == 'success!'
+E         - success!
+E         ?        -
+E         + success
+
+case\login_box\test_getAir.py:83: AssertionError</failure></testcase><testcase classname="case.login_box.test_getAir.TestInTheaters" name="test_in_theaters[验证响应中天气与预期一致]" time="0.079"><failure message="assert 40 == 41">self = &lt;case.login_box.test_getAir.TestInTheaters object at 0x00000126C1B04EB8&gt;, preparation = '在数据库中准备测试数据', env = {'host': {'air': 'http://api.map.baidu.com', 'local': 'test'}}, case = '验证响应中天气与预期一致'
+http = {'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87...params': {'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG', 'data_type': 'all', 'district_id': 222411}, 'path': '/weather/v1/'}
+expected = {'response': {'message': '查询的区域编码无效', 'status': 41}}
+
+    @pytest.mark.parametrize("case,http,expected",list(list_params),ids= cases)
+    def test_in_theaters(self,preparation,env,case,http,expected):#实现测试数据与用例代码逻辑分离
+        '''[
+                ('验证响应中status和message与预期一致',
+                    {
+                    'method': 'GET',
+                     'path': '/weather/v1/',
+                    'headers': {
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+                                },
+                     'params': {
+                                'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG',
+                                'district_id': 222405,
+                                'data_type': 'all'
+                                }
+                    },
+                    {
+                    'status': 0,
+                    'message': 'success'
+                        }
+                ),
+                 ('你好',
+                    {
+                    'method': 'POST',
+                    'path': '/weather/v1/',
+                    'headers':{
+                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+                                },
+                    'params': {
+                                'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG',
+                                'district_id': 222405,
+                                'data_type': 'all'
+                                }
+                    },
+                    {
+                    'status': 0,
+                    'message': 'success'
+                        }
+                     )
+                ]'''
+        # host = "http://api.map.baidu.com"
+        #[0][1]中0表示是第一条用例（列表中的第一个小元祖），1表示小元祖其中的字典“http”键的值--请求内容
+        # ps:小元祖中的内容分为三块，第一部分为用例标题，为字符串的形式；第二块是http的请求主体内容；第三块是预期结果的内容；后面两块都是以字典数据类型存储表达
+        #所以基本的形式有[i][0],[i][1],[i][2],i为用例的条数
+        # r = requests.request(list_params[0][1]["method"],
+        #                      url=host + list_params[0][1]["path"],
+        #                      headers=list_params[0][1]["headers"],
+        #                      params=list_params[0][1]["params"])
+    
+        r = requests.request(http["method"],
+                             url=env["host"]["air"] + http["path"],
+                             headers=http["headers"],
+                             params=http["params"]
+                             )
+        response = r.json()
+        print(response)
+        # assert response["status"] == 0
+        # assert response["status"] == list_params[0][2]['response']['status']
+&gt;       assert response["status"] == expected['response']['status']
+E       assert 40 == 41
+
+case\login_box\test_getAir.py:82: AssertionError</failure></testcase></testsuite></testsuites>
