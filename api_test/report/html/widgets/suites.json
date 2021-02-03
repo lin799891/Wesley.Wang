@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "3db235f559fcf90ca7285baf56084383",
+    "name" : "case.login_box",
+    "statistic" : {
+      "failed" : 3,
+      "broken" : 0,
+      "skipped" : 4,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 9
+    }
+  } ]
+}
