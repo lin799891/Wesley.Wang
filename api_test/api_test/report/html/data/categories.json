@@ -1,0 +1,60 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert ['success'] == 'success!'\n +  where ['success'] = <function jsonpath at 0x0000017085628A60>({'message': 'success', 'result': {'forecasts': [{'date': '2021-01-14', 'high': -6, 'low': -15, 'text_day': '多云', ...},... 'id': '222405', 'name': '龙井', ...}, 'now': {'feels_like': -18, 'rh': 46, 'temp': -13, 'text': '晴', ...}}, 'status': 0}, '$.message')\n +    where <function jsonpath at 0x0000017085628A60> = jsonpath.jsonpath",
+      "children" : [ {
+        "name" : "test_in_theaters[验证响应中status和message与预期一致]",
+        "uid" : "6db0516b1bb1905d",
+        "parentUid" : "68e02df7c673e6d6607450ba70fbadde",
+        "status" : "failed",
+        "time" : {
+          "start" : 1610594034374,
+          "stop" : 1610594034702,
+          "duration" : 328
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'验证响应中status和message与预期一致'", "{'response': {'status': 0, 'message': 'success!', 'text': '阴'}}", "{'method': 'GET', 'path': '/weather/v1/', 'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'}, 'params': {'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG', 'district_id': 222405, 'data_type': 'all'}}" ]
+      } ],
+      "uid" : "68e02df7c673e6d6607450ba70fbadde"
+    }, {
+      "name" : "AssertionError: assert ['查询的区域编码无效'] == '查询的区域编码无效'\n +  where ['查询的区域编码无效'] = <function jsonpath at 0x0000017085628A60>({'message': '查询的区域编码无效', 'status': 40}, '$.message')\n +    where <function jsonpath at 0x0000017085628A60> = jsonpath.jsonpath",
+      "children" : [ {
+        "name" : "test_in_theaters[验证响应中天气与预期一致]",
+        "uid" : "c27fb1a76d2b448",
+        "parentUid" : "f9428af23c472041dde2a2a71e21c90e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1610594034814,
+          "stop" : 1610594034925,
+          "duration" : 111
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "'验证响应中天气与预期一致'", "{'response': {'status': 41, 'message': '查询的区域编码无效'}}", "{'method': 'GET', 'path': '/weather/v1/', 'headers': {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'}, 'params': {'ak': 'SKEu06VYg5GH6VA7zERlpM33acLOKNBG', 'district_id': 222411, 'data_type': 'all'}}" ]
+      } ],
+      "uid" : "f9428af23c472041dde2a2a71e21c90e"
+    }, {
+      "name" : "AssertionError: assert 0",
+      "children" : [ {
+        "name" : "test_diymark",
+        "uid" : "2129fcba4fcdcd84",
+        "parentUid" : "c9c77d7ae15b4ab6e63220cefc19b68f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1610594035157,
+          "stop" : 1610594035157,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c9c77d7ae15b4ab6e63220cefc19b68f"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

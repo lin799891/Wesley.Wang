@@ -1,0 +1,3 @@
+host:
+  air: http://api.map.baidu.com1
+  local: prod
