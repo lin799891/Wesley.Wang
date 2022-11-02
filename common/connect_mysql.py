@@ -2,10 +2,10 @@ import pymysql
 
 
 dbinfo = {
-    "host":"54.245.72.232",
-    "user":"fsbox",
-    "password":"tzZ=xx20cfmI",
-    "port":13307
+    "host":"",
+    "user":"",
+    "password":"",
+    "port":
 }
 class DbConnect():
     def __init__(self,db_cof,database=""):
